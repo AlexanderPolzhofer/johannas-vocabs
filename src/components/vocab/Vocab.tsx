@@ -17,8 +17,11 @@ export const Vocab: React.FC<VocabProps> = ({ vocabData, onValidate }) => {
 
   const { id, en, de } = vocabData;
 
-  console.log(de.trim().toLowerCase().split(","));
-  console.log("2", de.trim().toLowerCase().replace(/\s/g, "").split(","));
+  console.log(currentVocab.trim().toLowerCase().replace(/\s/g, "").split(","));
+  console.log(
+    "3",
+    de.trim().toLowerCase().replace(/\s/g, "").split(",").reverse()
+  );
 
   return (
     <Styled.Vocabulary key={id}>
@@ -32,7 +35,25 @@ export const Vocab: React.FC<VocabProps> = ({ vocabData, onValidate }) => {
             .toLowerCase()
             .replace(/\s/g, "")
             .split(",")
-            .includes(currentVocab.trim().toLowerCase().replace(/\s/g, "")) ? (
+            .includes(currentVocab.trim().toLowerCase().replace(/\s/g, "")) ||
+          de
+            .trim()
+            .toLowerCase()
+            .replace(/\s/g, "")
+            .split(",")
+            .reverse()
+            .includes(
+              currentVocab
+                .trim()
+                .toLowerCase()
+                .replace(/\s/g, "")
+                .split(",")[0] &&
+                currentVocab
+                  .trim()
+                  .toLowerCase()
+                  .replace(/\s/g, "")
+                  .split(",")[1]
+            ) ? (
             <FontAwesomeIcon
               icon={faCheckCircle}
               size="sm"
