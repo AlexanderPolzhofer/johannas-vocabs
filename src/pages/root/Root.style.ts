@@ -5,14 +5,15 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  max-width: 360px;
+  max-width: 395px;
 `;
 
-export const ButtonResultContainer = styled.div`
-  display: flex;
-  justify-content: space between;
-  align-items: center;
+export const ButtonContainer = styled.div`
   padding-top: 8px;
 `;
 
-export const Heading = styled.h2``;
+export const Heading = styled.h2`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;

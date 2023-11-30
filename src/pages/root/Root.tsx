@@ -11,18 +11,13 @@ export const Root: React.FC = () => {
     <>
       <Styled.Container>
         <Styled.Heading>Johannas Vokabeln</Styled.Heading>
-        {vocabulary.map((vocab) => {
-          return (
-            <Vocab key={vocab.id} vocabData={vocab} onValidate={onValidate} />
-          );
-        })}
+        {vocabulary.map((vocab) => (
+          <Vocab key={vocab.id} vocabData={vocab} onValidate={onValidate} />
+        ))}
+        <Styled.ButtonContainer>
+          <Button label="Überprüfen" onClick={() => setOnValidate(true)} />
+        </Styled.ButtonContainer>
       </Styled.Container>
-      <Styled.ButtonResultContainer>
-        <div>
-          <span>0/5</span>
-        </div>
-        <Button label="Überprüfen" onClick={() => setOnValidate(true)} />
-      </Styled.ButtonResultContainer>
     </>
   );
 };
