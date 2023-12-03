@@ -8,12 +8,20 @@ export const Container = styled.div`
   max-width: 395px;
 `;
 
-export const ButtonContainer = styled.div`
+export const ButtonResultContainer = styled.div`
+  width: 100%;
   padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const Heading = styled.h2`
   width: 100%;
   display: flex;
   justify-content: center;
+`;
+
+export const Result = styled.div`
+  display: flex;
+  align-items: center;
 `;

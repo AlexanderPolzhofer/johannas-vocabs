@@ -5,18 +5,26 @@ import { Button } from "../../components/button/Button";
 import * as Styled from "./Root.style";
 
 export const Root: React.FC = () => {
-  const [onValidate, setOnValidate] = React.useState(false);
+  const [count, setCount] = React.useState(0);
 
   return (
     <>
       <Styled.Container>
         <Styled.Heading>Johannas Vokabeln</Styled.Heading>
         {vocabulary.map((vocab) => (
-          <Vocab key={vocab.id} vocabData={vocab} onValidate={onValidate} />
+          <Vocab
+            key={vocab.id}
+            vocabData={vocab}
+            count={count}
+            setCount={setCount}
+          />
         ))}
-        <Styled.ButtonContainer>
-          <Button label="Überprüfen" onClick={() => setOnValidate(true)} />
-        </Styled.ButtonContainer>
+        <Styled.ButtonResultContainer>
+          {false && <Button label="Überprüfen" />}
+          <Styled.Result>
+            {count} / {vocabulary.length}
+          </Styled.Result>
+        </Styled.ButtonResultContainer>
       </Styled.Container>
     </>
   );
